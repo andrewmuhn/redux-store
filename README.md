@@ -1,132 +1,84 @@
-# 22 State: Redux Store (Extra Credit)
+# Redux-Store
 
-## Your Task
+## Description
 
-In this module, you learned how to manage global state using React’s Context API. The Context API is quickly gaining traction as a worthy alternative or perhaps even successor to other libraries that manage global state in tandem with React, such as Flux or MobX. Nonetheless, the open source JavaScript library Redux remains the industry standard for managing complex state in a large-scale React application, and you’ll likely encounter it on the job.
+- This basic book search app allows a user to log in a serach bup their favorite books or books they want to read and save them to one list for easy reference. After they are done they can look throught their saved books and delete them.
+- I create this basic book-search-engine to practice converting a RESTful API to a GraphQL Api.
+- This app utilizes googlebooks search api to query books.
+- The app then uses a MongoDB Databse to hold user information and a list of books each user saved.
 
-Your challenge this week is to refactor the e-commerce platform from [Activity 26](../01-Activities/26-Stu_Actions-Reducers/Unsolved) so that it uses [Redux](https://redux.js.org/). You won’t need to make sweeping changes to the code, but you will need to read through the Redux documentation on your own to find the information you need. Some guidelines have been provided in the Getting Started section to point you in the right direction. If you haven't yet, download the [e-commerce platform code from Activity 26](http://static.fullstack-bootcamp.com/fullstack-ground/unit-22/26-Stu_Actions-Reducers.zip).
+## Table of Contents
 
-**On the Job**: Web developers frequently have to immerse themselves in a new technology to solve a problem, with only that tool’s documentation for help. They must sift through it to find the information that matches the specific problem they’re trying to solve. This assignment will allow you to practice a skill that you’ll use many times over the course of your career.
+- [Usage](#usage)
+- [Credits](#credits)
 
-Remember, this module's Challenge is extra credit. It is not required for submission, nor will it count towards one of the two assignments that you can skip. If you choose to submit this Challenge, you will receive extra credit points on your final grade. However, if you choose not to submit it, your final grade will not be affected in any way. This Challenge is an opportunity for you to further practice your skills and get feedback on it, with the added incentive of receiving extra credit for the work.
+## Usage
 
-## User Story
+This application is deployed at:
 
-```md
-AS a senior engineer working on an e-commerce platform
-I WANT my platform to use Redux to manage global state instead of the Context API
-SO THAT my website's state management is taken out of the React ecosystem
-```
+[Heroku book-search-app](https://redux-store-2345-d1209ed545d6.herokuapp.com/)
 
-## Acceptance Criteria
+The repo can be found at:
 
-```md
-GIVEN an e-commerce platform that uses Redux to manage global state
-WHEN I review the app’s store
-THEN I find that the app uses a Redux store instead of the Context API
-WHEN I review the way the React front end accesses the store
-THEN I find that the app uses a Redux provider
-WHEN I review the way the app determines changes to its global state
-THEN I find that the app passes reducers to a Redux store instead of using the Context API
-WHEN I review the way the app extracts state data from the store
-THEN I find that the app uses Redux instead of the Context API
-WHEN I review the way the app dispatches actions
-THEN I find that the app uses Redux instead of the Context API
-```
+[github repo](https://github.com/andrewmuhn/redux-store)
 
-## Mock-Up
+To use this app:
 
-This section reviews the web application's general appearance and functionality.
+Simply naviagte to the above URL. You can then click the login/signup button in the upper left hand corner and enter in your information to either login or get signed up if you are a new use.
+![Home](assets/home.png)
+![login](assets/login.png)
+![signup](assets/signup.png)
 
-The following animation shows how a user can register using the Signup page and then navigate to the Products page:
+Then simply type the book you're lookign for into the search bar and hit enter. Then click on save this book button when you want to save it to your list.
+![search books](assets/searchbooks.png)
 
-![A user registers on the Signup page and then navigates to the Products page, which displays images and descriptions of products.](./Assets/22-state-homework-demo-01.gif)
+To view your saved books click on the See Your Books button at the top of your screen and see the books have saved. If you wish to delete them off your list simply click the delete book button.
+![saved books](assets/savedbooks.png)
 
-The following animation shows how the user can select a category, choose a product, view details about it on the product page, and add and remove it from their shopping cart:
+## Credits
 
-![The user selects a category, chooses a product, views details about it on the product page, and adds it to and removes it from their shopping cart.](./Assets/22-state-homework-demo-02.gif)
+![edX][edX]
 
-Finally, the user can check out by going to their shopping cart, as shown in the following animation:
+Project created by [Andrew Muhn](https://github.com/andrewmuhn)
+as part of UofO Edx Bootcamp
 
-![The user checks out by going to their shopping cart.](./Assets/22-state-homework-demo-03.gif)
+Utilized:
 
-## Getting Started
+- [![NodeJS][NodeJS]][NodeJS-url]
+- [![Express.js][Express.js]][Express-url]
+- [![Heroku][Heroku]][Heroku-url]
+- [![Nodemon][Nodemon]][Nodemon-url]
+- [![React][React.js]][React-url]
+- [![Redux][Redux]][Redux-url]
 
-For instructions to add Redux to your application, refer to the [Redux Fundamentals basic tutorial](https://redux.js.org/basics/basic-tutorial). Note that the documentation will refer to additional packages that you'll need to complete this implementation.
+- [![Apollo-GraphQL][Apollo-GraphQL]][Apollo-url]
+- [![JWT][JWT]][JWT-url]
+- [![MongoDB][MongoDB]][mongoDB-url]
+- [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+- [bcrypt](https://www.npmjs.com/package/bcrypt)
+- [Mongoose](https://mongoosejs.com/docs/guide.html)
+- [concurrently](https://github.com/open-cli-tools/concurrently#readme)
 
-Be sure to review ALL of the documentation, because there are newer methods that can make these tools much easier to implement. React has gone through several iterations; as such, some React-and-Redux tutorials will assume that you aren't using Hooks.
+<!-- MARKDOWN LINKS & IMAGES -->
 
-You'll use the Stripe API to process payments, which includes making front-end and back-end changes. Don't worry, Stripe provides test credentials, so you won't need to use a real credit card to try it out. Refer to the [Stripe docs on testing your integration](https://stripe.com/docs/testing).
-
-**Important**: The Challenge requires a specific version `(>=7.0)` of `npm` in order to install peer dependencies like GraphQL when deploying to Heroku. By default, Heroku uses `npm 6.x`, which may cause some issues. Be sure to refer to the [Heroku Docs on Specifying an NPM Version](https://devcenter.heroku.com/articles/nodejs-support#specifying-an-npm-version) to ensure your `package.json` file is set up correctly, as shown in the following snippet:
-
-  ```json
-  {
-    "engines": {
-      "npm": "7.x"
-    }
-  }
-  ```
-
-## Grading Requirements
-
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
-
-This Challenge is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria plus the following:
-
-  * Retains all the functionality of the original application.
-
-  * Application must be deployed to Heroku.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository contains application code.
-
-### Application Quality: 15%
-
-* User experience is intuitive and easy to navigate.
-
-* User interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains high-quality README file with description, screenshot, and link to the deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository, with a unique name and a README describing the project.
-
-- - -
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+[edX]: https://img.shields.io/badge/edX-%2302262B.svg?style=for-the-badge&logo=edX&logoColor=white
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[mongoDB]: https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white
+[mongoDB-url]: https://www.mongodb.com/
+[Apollo-GraphQL]: https://img.shields.io/badge/-ApolloGraphQL-311C87?style=for-the-badge&logo=apollo-graphql
+[Apollo-url]: https://www.apollographql.com/docs/
+[Express.js]: https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB
+[Express-url]: https://expressjs.com/
+[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap-url]: https://getbootstrap.com
+[JWT]: https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens
+[JWT-url]: https://www.npmjs.com/package/jsonwebtoken
+[NodeJS]: https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white
+[NodeJS-url]: https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white
+[Nodemon]: https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD
+[nodemon-url]: https://nodemon.io/
+[Heroku]: https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white
+[Heroku-url]: https://www.heroku.com/
+[Redux]: https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white
+[Redux-url]: https://react-redux.js.org/introduction/getting-started
