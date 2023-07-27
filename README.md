@@ -2,10 +2,8 @@
 
 ## Description
 
-- This basic book search app allows a user to log in a serach bup their favorite books or books they want to read and save them to one list for easy reference. After they are done they can look throught their saved books and delete them.
-- I create this basic book-search-engine to practice converting a RESTful API to a GraphQL Api.
-- This app utilizes googlebooks search api to query books.
-- The app then uses a MongoDB Databse to hold user information and a list of books each user saved.
+- This basic online store interface allows users to login and buy things using stripe
+- The purpose of creating this application was to learn how to convert an app from native React Context API to redux.
 
 ## Table of Contents
 
@@ -16,7 +14,7 @@
 
 This application is deployed at:
 
-[Heroku book-search-app](https://redux-store-2345-d1209ed545d6.herokuapp.com/)
+[Heroku redux-store](https://redux-store-2345-d1209ed545d6.herokuapp.com/)
 
 The repo can be found at:
 
@@ -25,15 +23,21 @@ The repo can be found at:
 To use this app:
 
 Simply naviagte to the above URL. You can then click the login/signup button in the upper left hand corner and enter in your information to either login or get signed up if you are a new use.
-![Home](assets/home.png)
-![login](assets/login.png)
-![signup](assets/signup.png)
+![Home](Assets/home.png)
+![login](Assets/login.png)
+![signup](Assets/signup.png)
 
-Then simply type the book you're lookign for into the search bar and hit enter. Then click on save this book button when you want to save it to your list.
-![search books](assets/searchbooks.png)
+Then simply add the items to your cart that you are interested in buying then click checkout when you are ready to checkout.
+![cart](Assets/cart.png)
 
-To view your saved books click on the See Your Books button at the top of your screen and see the books have saved. If you wish to delete them off your list simply click the delete book button.
-![saved books](assets/savedbooks.png)
+Then you will be taken to stripe to process the payment.
+
+- **Note**: Do not use your personal credit information. It is a test application and you cannot actual order anything from the website.
+
+![stripe](Assets/stripe.png)
+
+Then you can view your orders by clicking the order history tab in the upper left hand corner
+![orders](Assets/orders.png)
 
 ## Credits
 
@@ -50,9 +54,9 @@ Utilized:
 - [![Nodemon][Nodemon]][Nodemon-url]
 - [![React][React.js]][React-url]
 - [![Redux][Redux]][Redux-url]
-
 - [![Apollo-GraphQL][Apollo-GraphQL]][Apollo-url]
 - [![JWT][JWT]][JWT-url]
+- [![Stripe][Stripe]][Stripe-url]
 - [![MongoDB][MongoDB]][mongoDB-url]
 - [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 - [bcrypt](https://www.npmjs.com/package/bcrypt)
@@ -82,3 +86,5 @@ Utilized:
 [Heroku-url]: https://www.heroku.com/
 [Redux]: https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white
 [Redux-url]: https://react-redux.js.org/introduction/getting-started
+[Stripe]: https://img.shields.io/badge/Stripe-626CD9?style=for-the-badge&logo=Stripe&logoColor=white
+[Stripe-url]: https://stripe.com/docs
